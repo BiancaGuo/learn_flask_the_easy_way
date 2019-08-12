@@ -1,0 +1,2 @@
+# learn_flask_the_easy_way
+ 使用flask搭建的水印自动化嵌入与检测平台
