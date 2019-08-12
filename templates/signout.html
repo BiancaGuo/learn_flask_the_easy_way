@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} - signout - {% endblock %}
+{% block page_content %}
+
+<div class="page-header">
+    <form action="/signout.html" method="post">
+        <legend>Sign Out</legend>
+
+        {{ form.csrf_token }}
+    
+        <input class="btn btn-primary" type="submit" value="Sign In">
+    </form>
+</div>
+
+
+{% endblock %}

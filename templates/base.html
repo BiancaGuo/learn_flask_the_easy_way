@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}数字水印系统{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+             data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">数字水印系统</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                 <li><a href="/">Home</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="./signout.html">登出</a></li>
+                    <li><a href="./add_watermark.html">添加水印</a></li>
+                    <li><a href="./extract_watermark.html">提取水印</a></li>
+                {% else %}
+                    <li><a href="./register.html">注册</a></li>
+                    <li><a href="./signin.html">登录</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block page_content %}{% endblock %}
+</div>
+
+
+<div id="footer" style="text-align: center">
+    &copy; Copyright 2018 by Bianca.
+</div>
+
+{% endblock %}
